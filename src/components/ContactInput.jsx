@@ -1,9 +1,10 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { selectContact } from '../redux/selectors';
-import { NewContactLabel, Input } from 'components/Styles.styled';
 import { addContact } from '../redux/operations';
+import { selectContact } from '../redux/selectors';
+
+import { NewContactLabel, Input } from 'components/Styles.styled';
 
 export const ContactInput = () => {
   const dispatch = useDispatch();

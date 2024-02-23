@@ -1,9 +1,10 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 
-import { filteredContacts } from '../redux/selectors';
-import { ContactUlList, ContactButton } from './Styles.styled';
 import { deleteContact } from '../redux/operations';
+import { filteredContacts } from '../redux/selectors';
+
+import { ContactUlList, ContactButton } from './Styles.styled';
 
 export const ContactList = () => {
   const dispatch = useDispatch();

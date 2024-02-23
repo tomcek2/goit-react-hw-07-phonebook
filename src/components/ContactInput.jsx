@@ -1,13 +1,13 @@
 import React, { useRef } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 
-import { getContact } from '../redux/selectors';
-import { addContact } from '../redux/contactSlice';
+import { selectContact } from '../redux/selectors';
 import { NewContactLabel, Input } from 'components/Styles.styled';
+import { addContact } from '../redux/operations';
 
 export const ContactInput = () => {
   const dispatch = useDispatch();
-  const contacts = useSelector(getContact);
+  const contacts = useSelector(selectContact);
   const nameRef = useRef();
   const numberRef = useRef();
 
@@ -19,7 +19,9 @@ export const ContactInput = () => {
     ) {
       alert(`${newContact.name} is already in contacts.`);
     } else {
-      dispatch(addContact(newContact.name, newContact.number));
+      dispatch(
+        addContact({ name: newContact.name, number: newContact.number })
+      );
     }
   };
 
